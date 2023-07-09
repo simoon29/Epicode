@@ -1,0 +1,14 @@
+def lunghezza_parole():
+        input_parole = input("\nInserisci una lista di parole separate da uno spazio:\n\n")
+        parole_lista = input_parole.split(' ')
+        #print(parole_lista)
+        lunghezza_lista=len(parole_lista)
+        lista_output = []
+
+        for i in range(lunghezza_lista):
+
+                lista_output.append(len(parole_lista[i].strip()))
+
+        return print("\nLa lunghezza delle parole inserite è: ", lista_output)
+
+lunghezza_parole()
