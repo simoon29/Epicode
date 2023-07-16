@@ -1,0 +1,24 @@
+                                                                                         calcoloarea.c                                                                                                             
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+        float input;
+        double areaquadrato, areacerchio, areatriangolo;
+        printf("Inserisci un numero reale D\n");
+        scanf("%f", &input);
+        areaquadrato = pow(input, 2);
+        areacerchio = pow(input/2, 2)*M_PI;
+        areatriangolo = (sqrt(3)/4)*pow(input, 2);
+        printf("\nL'area di un quadrato di lato D è %lf ", areaquadrato);
+        printf("\nL'area di un cerchio di diametro D è %lf ", areacerchio);
+        printf("\nL'area di un triangolo equilatero di lato D è %lf ", areatriangolo);
+        return 0;
+}
+
+
+
+
+
+
+
