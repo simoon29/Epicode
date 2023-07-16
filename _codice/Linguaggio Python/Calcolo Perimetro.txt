@@ -1,0 +1,68 @@
+import math
+import subprocess
+
+file_path = "/home/kali/Desktop/ESERCIZI/perimetro.py"
+
+def restart_prg(file_path):
+	subprocess.call(["python", file_path], bufsize=0)
+
+def uscita():
+	while True:
+		fine=input("\nVuoi eseguire un'altra operazione (A) o uscire dal programma (B)?\n")
+		if fine.isdigit() or fine not in ('A', 'a', 'b', 'B'):
+			print("\nErrore. Devi inserire A o B, riprova.")
+		else:
+			break
+	if fine in ('A', 'a'):
+                restart_prg(file_path)
+
+while True:
+	scelta = input('\n\nQuale perimetro vuoi calcolare?\nInserisci la lettera corrispondente:\n\nA) Quadrato\nB) Cerchio\nC) Rettangolo\n')
+	if  	scelta.isdigit() or scelta not in ('a', 'A', 'b', 'B', 'c', 'C'):
+		print("\nDevi inserire A, B o C. Riprova.")
+	else:
+		break
+
+if scelta in ('A', 'a'):
+	while True:
+		s_lato = input("\nInserisci la lunghezza del lato del quadrato:\n")
+		if not  s_lato.isdigit():
+			print("\nIl carattere inserito non è un numero intero. Riprova.")
+		else:
+			break
+	lato = int(s_lato)
+	perim_q = lato*4
+	print("\nUn quadrato di lato:\t" + s_lato + "\nha un perimetro di:\t" + str(perim_q))
+	uscita()
+
+elif scelta in ('B', 'b'):
+	while True:
+		s_raggio = input("\nInserisci la lunghezza del raggio del cerchio:\n")
+		if not s_raggio.isdigit():
+			print("\nIl carattere inserito non è un numero intero. Riprova.")
+		else:
+			break
+	raggio = int(s_raggio)
+	circonferenza = 2*math.pi*raggio
+	print("\nUn cerchio di raggio:\t\t" + s_raggio + "\nha una circonferenza di:\t" + str(circonferenza))
+	uscita()
+
+elif scelta in ('C', 'c'):
+	while True:
+		s_base = input("\nInserisci la base del rettangolo:\n")
+		if not s_base.isdigit():
+			print("\nIl carattere inserito non è un numero intero. Riprova.")
+		else:
+			break
+	while True:
+		s_altezza = input("\nInserisci l'altezza del rettangolo:\n")
+		if not s_altezza.isdigit():
+			print("\nIl carattere inserito non è un numero intero. Riprova.")
+		else:
+			break
+	base = int(s_base)
+	altezza = int(s_altezza)
+	perim_r = 2*base+2*altezza
+	print("\nUn rettangolo di base\t" + s_base + "\ne altezza:\t\t" + s_altezza + "\nha un perimetro di:\t" + str(perim_r))
+	uscita()
+
