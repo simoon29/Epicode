@@ -1,0 +1,235 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int score;
+char nome[20];
+
+
+//Inseriti controlli per evitare la scansione dei caratteri delle risposte char in caso di inserimento di più di un carattere
+
+
+char sceltainiziale () {
+
+char scelta;
+char inputscelta[500];
+int  lenscelta;
+
+printf("\nCosa vuoi fare?\nInserisci qua sotto la lettera corrispondente alla tua risposta:\n\nA) Avvia una nuova partita\nB) Esci dal gioco\n\n");
+
+scanf(" %s", &inputscelta);
+
+lenscelta = strlen(inputscelta);
+
+if (lenscelta != 1) {
+        scelta='x';
+        }
+else { scelta=inputscelta[0];
+        }
+
+//scanf(" %c", &scelta);
+
+return scelta;
+}
+
+
+int valutazionescelta(char var) {
+
+switch(var) {
+        case  'A':
+        case  'a':
+              break;
+        case  'B':
+        case  'b':
+           printf("\nCi dispiace che tu te ne vada.\nAlla prossima!\n");
+           exit(0);
+        default:
+           printf("\nLa tua risposta non è accettabile, devi rispondere A o B. Ritenta.\n");
+           valutazionescelta(sceltainiziale());
+           }
+
+return 0;
+}
+
+
+int checknome() {
+
+int lunghezza;
+
+lunghezza=0;
+
+printf("\n\nCome ti chiami? Inserisci il tuo nome qua sotto:\n");
+scanf(" %s", &nome);
+
+lunghezza = strlen(nome);
+
+if (lunghezza > 20) {
+                printf("\nIl nome non può superare i 20 caratteri");
+                checknome();
+                }
+else {
+                printf("\n\nCiao %s", nome);
+                printf(", ora iniziano le vere domande e il conteggio dei punti...Via!!!\n");
+                }
+return 0;
+
+}
+
+
+
+int domandauno() {
+
+char rispostauno;
+char inputuno[500];
+int lenuno;
+
+printf("\n\nDomanda 1: Quale pianeta del sistema solare ha il periodo di rivoluzione più breve?\n");
+printf("\nIndica qua sotto la lettera corrispondente alla tua risposta:\nA) Mercurio\nB) Venere\nC) Marte\n\n");
+scanf("%s", &inputuno);
+
+lenuno = strlen(inputuno);
+
+if(lenuno != 1) {
+                rispostauno='x';
+                }
+else  {         rispostauno = inputuno[0];
+                }
+
+//scanf(" %c", &rispostauno);
+
+if(rispostauno=='A'|| rispostauno=='a') {
+                score=1;
+                printf("\nOttimo inizio!");
+                // printf("\nIl tuo punteggio è %d", score);
+                }
+
+
+else if(rispostauno == 'B'|| rispostauno == 'b' || rispostauno == 'C' || rispostauno == 'c' ) {
+                score=0;
+                printf("\nMi dispiace, hai sbagliato. La risposta corretta è A) Mercurio.\n");
+                //printf("\nIl tuo punteggio è %d", score);
+                }
+
+else  {         score=0;
+                printf("\nErrore. La risposta deve essere A, B o C.\n");
+                //printf("\nIl tuo punteggio è %d", score);
+                domandauno();
+                }
+return 0;
+
+}
+
+
+int domandadue() {
+
+char rispostadue;
+char inputdue[500];
+int lendue;
+
+
+printf("\n\nDomanda 2: Quale dei seguenti elementi chimici è un metallo alcalino?\n");
+printf("\nIndica qua sotto la lettera corrispondente alla tua risposta:\nA) Fluoro\nB) Iodio\nC) Litio\n\n");
+
+scanf("%s", &inputdue);
+
+lendue = strlen(inputdue);
+
+if(lendue != 1) {
+                rispostadue='x';
+                }
+else  {         rispostadue = inputdue[0];
+                }
+
+//scanf(" %c", &rispostadue);
+
+if(rispostadue=='C'|| rispostadue=='c') {
+                score++;
+                printf("\nEsatto!");
+                //printf("\nIl tuo punteggio è %d", score);
+                }
+
+else if(rispostadue == 'B'|| rispostadue == 'b' || rispostadue == 'A' || rispostadue =='a' ) {
+                printf("\nMi dispiace, hai sbagliato. La risposta corretta è C) Litio.\n");
+                //printf("\nIl tuo punteggio è %d", score);
+                }
+
+else  {
+                printf("\nErrore. La risposta deve essere A, B o C.\n");
+                //printf("\nIl tuo punteggio è %d", score);
+                domandadue();
+        }
+
+return 0;
+
+}
+
+
+int domandatre() {
+
+char rispostatre;
+char inputtre[500];
+int lentre;
+
+
+printf("\n\nDomanda 3: Qual è uno dei principi fondamentali della meccanica quantistica?\n");
+printf("\nIndica qua sotto la lettera corrispondente alla tua risposta:\nA) Principio di conservazione dell'energia\nB) Principio di indeterminazione di Heisenberg\nC) Principio di azione e reazione\n\n");
+scanf("%s", &inputtre);
+
+lentre = strlen(inputtre);
+
+if(lentre != 1) {
+                rispostatre='x';
+                }
+else  {         rispostatre = inputtre[0];
+                }
+
+//scanf(" %c", &rispostatre);
+
+if(rispostatre=='B'|| rispostatre=='b') {
+                score++;
+                printf("\nBravo!", score);
+                //printf("\nIl tuo punteggio è %d", score);
+                }
+
+else if(rispostatre == 'C'|| rispostatre == 'c' || rispostatre == 'A' || rispostatre == 'a' ) {
+                printf("\nMi dispiace, hai sbagliato. La risposta corretta è B) Principio di indeterminazione di Heisenberg.\n");
+                //printf("\nIl tuo punteggio è %d", score);
+                }
+
+else  {
+                printf("\nErrore. La risposta deve essere A, B o C.\n");
+                //printf("\nIl tuo punteggio è %d", score);
+                domandatre();
+                }
+
+return 0;
+
+}
+
+
+
+int  main () {
+
+printf("\n\n***Benvenuto!***\nQuesto è un difficile quiz di sole 3 domande. Avrai a disposizione 3 opzioni per ciascuna domanda, una sola è quella corretta e vale 1 punto. Riuscirai nell'impresa??\n\n");
+
+valutazionescelta(sceltainiziale());
+
+checknome();
+
+domandauno();
+
+domandadue();
+
+domandatre();
+
+
+printf("\n\nBene, %s", nome);
+printf(", il quiz è finito.\n\nIl tuo punteggio totale è %d/3.\n\n", score);
+
+valutazionescelta(sceltainiziale());
+
+main();
+
+return 0;
+
+}

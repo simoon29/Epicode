@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+int somma (int a, int b)
+{
+int c = a + b;
+return c;
+}
+
+int main () {
+
+int primo_numero;
+int secondo_numero;
+
+printf (" inserisci qui il primo numero: \n");
+scanf ("%d", &primo_numero);
+
+
+printf (" inserisci qui il secondo numero: \n");
+scanf ("%d", &secondo_numero);
+
+printf("la somma è %d\n", somma(primo_numero, secondo_numero), "\n");
+
+        for(int i=3; i>0; i--) {
+                printf ("Bevo birra\n");
+        }
+
+return 0;
+
+}
+
