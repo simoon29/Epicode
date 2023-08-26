@@ -1,0 +1,17 @@
+# Nmap 7.93 scan initiated Sat Aug 26 10:39:23 2023 as: nmap -sV -oN sVScanWindows.txt 192.168.50.101
+Nmap scan report for 192.168.50.101
+Host is up (0.0014s latency).
+Not shown: 992 filtered tcp ports (no-response)
+PORT      STATE SERVICE      VERSION
+135/tcp   open  msrpc        Microsoft Windows RPC
+139/tcp   open  netbios-ssn  Microsoft Windows netbios-ssn
+445/tcp   open  microsoft-ds Microsoft Windows 7 - 10 microsoft-ds (workgroup: WORKGROUP)
+49152/tcp open  msrpc        Microsoft Windows RPC
+49153/tcp open  msrpc        Microsoft Windows RPC
+49154/tcp open  msrpc        Microsoft Windows RPC
+49155/tcp open  msrpc        Microsoft Windows RPC
+49156/tcp open  msrpc        Microsoft Windows RPC
+Service Info: Host: WINDOWS7; OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Sat Aug 26 10:40:26 2023 -- 1 IP address (1 host up) scanned in 63.28 seconds
